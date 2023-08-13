@@ -9,8 +9,15 @@ import "./styles/main.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <AuthProvider>
-      <Router />
-    </AuthProvider>
-  </StrictMode>,
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<App />}>
+      <Route path="login" element={<Login />} / >
+      <Route path="list" element={<ListShorts />} />
+      <Route path="create" element={<Create />} />
+      <Router path="*" element={<p>Oh oh, there is nothing in here! 404</p>} />
+      </Route>
+    </Routes>
+    </BrowserRouter>
+  </StrictMode>
 );
